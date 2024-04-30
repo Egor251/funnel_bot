@@ -16,7 +16,12 @@ client = Client(name="my_account", api_hash=api_hash, api_id=api_id)
 
 @client.on_message(filters.private)
 def echo(client_object, message: Message):
-    client_object.send_message(message.chat.id, f"вы сказали: {message.text}")
+    #client_object.send_message(message.chat.id, f"вы сказали: {message.text}")
+    text = message.text.lower().split(' ')
+    if 'понятно' in text or 'ожидать' in text:
+        pass
+    else:
+        pass
 
 
 @client.on_message(filters.command("type", prefixes='!') & filters.me)
@@ -42,7 +47,7 @@ client.run()
 
 
 if __name__ == '__main__':
-    pass
+    client.run()
 
 
 

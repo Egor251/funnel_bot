@@ -5,10 +5,12 @@ from sqlalchemy.orm import DeclarativeBase, sessionmaker
 # https://metanit.com/python/database/3.3.php
 
 # строка подключения
-sqlite_database = "sqlite:///metanit.db"
+sqlite_database = "sqlite:///main.db"
+#postgres_database = "postgresql+psycopg2://admin:password@localhost/db1"
 
 # создаем движок SqlAlchemy
 engine = create_engine(sqlite_database)
+#engine = create_engine(postgres_database)
 
 # создаем класс сессии
 Session = sessionmaker(autoflush=False, bind=engine)
@@ -24,11 +26,13 @@ class Base(DeclarativeBase):
 
 # создаем модель, объекты которой будут храниться в бд
 class Msg(Base):
-    __tablename__ = "people"
-    id = Column(Integer)
+    __tablename__ = "main"
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer)
     created_at = Column(String)
     status = Column(String)
     status_updated_at = Column(String)
+    current_step = Column(Integer)
 
 
 # создаем таблицы

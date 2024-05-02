@@ -1,3 +1,4 @@
 pyrogram
 sqlalchemy
 tgcrypto
+psycopg2

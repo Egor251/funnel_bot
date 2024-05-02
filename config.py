@@ -1,2 +1,6 @@
-api_hash = "412379786ba59"
-api_id = "112312398"
+api_hash = ""
+api_id = ""
+
+text1 = 'Текст 1'
+text2 = 'Текст 2'
+text3 = 'Текст 3'
